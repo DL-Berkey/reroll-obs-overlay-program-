@@ -1,33 +1,40 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
+import Header from "@/components/layout/Header";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "REROLL — Live Overlay",
-  description: "채팅 · 후원 알림 · 목표 게이지 방송 오버레이와 제어 대시보드",
+    title: "REROLL — Live Overlay",
+    description: "채팅 · 후원 알림 · 목표 게이지 방송 오버레이와 제어 대시보드",
 };
 
-export default function RootLayout({
-  children,
+const RootLayout = ({
+    children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
-}
+    children: React.ReactNode;
+}>) => {
+    return (
+        <html
+            lang="ko"
+            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+        >
+            <body className="min-h-full flex flex-col">
+                <Header />
+                {children}
+            </body>
+        </html>
+    );
+};
+
+export default RootLayout;
