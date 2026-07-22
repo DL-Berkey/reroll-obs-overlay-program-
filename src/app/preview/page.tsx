@@ -1,18 +1,7 @@
 import Overlay from "@/components/overlay/Overlay";
 import { OverlayProvider } from "@/provider/OverlayProvider";
 
-export default function PreviewPage() {
-    return (
-        <OverlayProvider>
-            <main className="relative h-dvh w-full overflow-hidden">
-                <MockScene />
-                <Overlay />
-            </main>
-        </OverlayProvider>
-    );
-}
-
-function MockScene() {
+const MockScene = () => {
     return (
         <div className="absolute inset-0 bg-linear-to-br from-slate-800 via-slate-900 to-black">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(139,92,246,0.25),transparent_55%)]" />
@@ -27,4 +16,17 @@ function MockScene() {
             </div>
         </div>
     );
-}
+};
+
+const PreviewPage = () => {
+    return (
+        <OverlayProvider>
+            <main className="relative h-dvh w-full overflow-hidden">
+                <MockScene />
+                <Overlay />
+            </main>
+        </OverlayProvider>
+    );
+};
+
+export default PreviewPage;

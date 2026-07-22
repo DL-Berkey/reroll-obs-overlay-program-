@@ -9,10 +9,10 @@ export const initialState: OverlayState = {
     goalTarget: 100000,
 };
 
-export function overlayReducer(
+export const overlayReducer = (
     state: OverlayState,
     action: OverlayAction,
-): OverlayState {
+): OverlayState => {
     switch (action.type) {
         case "chat": {
             const chatList = [...state.chatList, action.message].slice(

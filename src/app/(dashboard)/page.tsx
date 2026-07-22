@@ -4,7 +4,7 @@ import DonationForm from "@/components/dashboard/DonationForm";
 import ChatForm from "@/components/dashboard/ChatForm";
 import GoalForm from "@/components/dashboard/GoalForm";
 
-export default function Home() {
+const Home = () => {
     return (
         <main className="mx-auto w-full max-w-xl px-6 py-8">
             <div className="flex flex-col gap-4">
@@ -16,4 +16,6 @@ export default function Home() {
             </div>
         </main>
     );
-}
+};
+
+export default Home;

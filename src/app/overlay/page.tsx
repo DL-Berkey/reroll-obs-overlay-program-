@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Overlay from "@/components/overlay/Overlay";
 import { OverlayProvider } from "@/provider/OverlayProvider";
 
-export default function OverlayPage() {
+const OverlayPage = () => {
     useEffect(() => {
         const { style } = document.body;
         const previous = style.background;
@@ -21,4 +21,6 @@ export default function OverlayPage() {
             </main>
         </OverlayProvider>
     );
-}
+};
+
+export default OverlayPage;

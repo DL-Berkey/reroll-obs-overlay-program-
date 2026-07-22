@@ -28,11 +28,11 @@ const chatMessageList = [
 
 const amountList = [1000, 3000, 5000, 10000, 30000, 50000];
 
-function pick<T>(list: T[]) {
+const pick = <T,>(list: T[]) => {
     return list[Math.floor(Math.random() * list.length)];
-}
+};
 
-export function randomDonation(): Donation {
+export const randomDonation = (): Donation => {
     return {
         id: crypto.randomUUID(),
         user: pick(userList),
@@ -41,7 +41,7 @@ export function randomDonation(): Donation {
     };
 }
 
-export function randomChat(): ChatMessage {
+export const randomChat = (): ChatMessage => {
     return {
         id: crypto.randomUUID(),
         user: pick(userList),

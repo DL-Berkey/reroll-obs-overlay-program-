@@ -6,13 +6,13 @@ import type { OverlayEvent } from "@/type";
 
 let channel: BroadcastChannel | null = null;
 
-function getChannel() {
+const getChannel = () => {
     if (typeof window === "undefined") return null;
     if (!channel) channel = new BroadcastChannel(CHANNEL_NAME);
     return channel;
 }
 
-export function useChannel(onEvent?: (event: OverlayEvent) => void) {
+export const useChannel = (onEvent?: (event: OverlayEvent) => void) => {
     useEffect(() => {
         if (!onEvent) return;
 
